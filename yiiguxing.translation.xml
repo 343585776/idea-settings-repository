@@ -1,0 +1,56 @@
+<application>
+  <component name="AppStorage">
+    <histories>
+      <item value="现有" />
+      <item value="终端" />
+      <item value="店主" />
+      <item value="店员" />
+      <item value="push" />
+      <item value="增量数据" />
+      <item value="增量" />
+      <item value="员工" />
+      <item value="employer" />
+      <item value="employ" />
+      <item value="employs" />
+      <item value="emp" />
+      <item value="人员" />
+      <item value="部门" />
+      <item value="execute" />
+      <item value="执行" />
+      <item value="Scheduler" />
+      <item value="封装参数" />
+      <item value="必填参数验证" />
+      <item value="PATIENT ID , PATIENT NAME , PATIENT PHONE NUMBER , PATIENT IDENTITY NUMBER , PATIENT HEIGHT , PATIENT WEIGHT , PATIENT EDUCATION , PATIENT ADRESS , PATIENT MARRIED , PATIENT MEDICAL INSURANCE TYPE , PATIENT MEDICAL INSURANCE ATTR , PATIENT OPERATED , PATIENT INHERITED , PATIENT JOB , PATIENT CONTACT , PATIENT CONTACT PHONE NUMBER , PATIENT HEMOPHILIA TYPE , PATIENT CONCENTRATION , PATIENT HAS INHIBITOR , PATIENT BU , PATIENT STARTING POSITION , PATIENT OCCURRED POSITION , PATIENT JOINT DEFORMITY , PATIENT INFECTIOUS DISEASE , PATIENT CONFIRMATION TIME , PATIENT ACCOMPANYING DISEASE , PATIENT TREATMENT PROGRAMS , PATIENT PAST HISTORY , PATIENT FOCUS , PATIENT UTIME , PATIENT UUSERID , PATIENT CTIME , PATIENT CUSERID" />
+      <item value="create" />
+      <item value="过去历史" />
+      <item value="出血" />
+      <item value="重点" />
+      <item value="重点关注" />
+      <item value="治疗方案" />
+      <item value="伴随疾病" />
+      <item value="确诊时间" />
+      <item value="传染病" />
+      <item value="发生过部位" />
+      <item value="关节畸形" />
+      <item value="首发部位" />
+      <item value="首发" />
+      <item value="已动手术" />
+      <item value="手术" />
+      <item value="被遗传" />
+      <item value="已经动手术" />
+      <item value="已手术" />
+      <item value="结婚" />
+      <item value="已结婚" />
+      <item value="遗传" />
+      <item value="抑制物" />
+      <item value="浓度" />
+      <item value="学历" />
+      <item value="体重" />
+      <item value="身高" />
+      <item value="手术病史" />
+      <item value="归属地" />
+      <item value="医疗保险" />
+      <item value="联系人" />
+    </histories>
+  </component>
+</application>

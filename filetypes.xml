@@ -1,0 +1,35 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="buyer-dockerfile" type="Docker file" />
+      <mapping pattern="seller-dockerfile" type="Dockerfile" />
+      <mapping ext="dockerfile" type="Dockerfile" />
+      <mapping ext="paw" type="Native" />
+      <mapping pattern="PO" type="PLAIN_TEXT" />
+      <mapping pattern=".gitattributes" type="PLAIN_TEXT" />
+      <mapping pattern="ServiceImpl" type="PLAIN_TEXT" />
+      <mapping pattern="define" type="PLAIN_TEXT" />
+      <mapping pattern="ParamsDTO" type="PLAIN_TEXT" />
+      <mapping pattern="init" type="PLAIN_TEXT" />
+      <mapping pattern="application-testyml" type="PLAIN_TEXT" />
+      <mapping pattern="autoImport" type="PLAIN_TEXT" />
+      <mapping pattern="rea" type="PLAIN_TEXT" />
+      <mapping pattern="Mapper" type="PLAIN_TEXT" />
+      <mapping pattern="ResultDTO" type="PLAIN_TEXT" />
+      <mapping pattern="Repository" type="PLAIN_TEXT" />
+      <mapping pattern="value" type="PLAIN_TEXT" />
+      <mapping pattern="Service" type="PLAIN_TEXT" />
+      <mapping pattern="Controller" type="PLAIN_TEXT" />
+      <mapping pattern="NoPagingView(html)" type="PLAIN_TEXT" />
+      <mapping pattern="PagingView(html)" type="PLAIN_TEXT" />
+      <mapping ext="bak" type="PLAIN_TEXT" />
+      <mapping ext="buyer" type="PLAIN_TEXT" />
+      <mapping ext="ini" type="PLAIN_TEXT" />
+      <mapping pattern="ValidationMessages" type="Properties" />
+      <mapping pattern="ValidationMessages_en" type="Properties" />
+      <removed_mapping ext="youtrack" type="YouTrack" />
+      <mapping pattern="yaml" type="SnakeYAML" />
+      <mapping pattern="yml" type="SnakeYAML" />
+    </extensionMap>
+  </component>
+</application>
