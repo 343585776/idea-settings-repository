@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="策略匹配" />
       <item value="现有" />
       <item value="终端" />
       <item value="店主" />
@@ -50,7 +51,6 @@
       <item value="手术病史" />
       <item value="归属地" />
       <item value="医疗保险" />
-      <item value="联系人" />
     </histories>
   </component>
 </application>
