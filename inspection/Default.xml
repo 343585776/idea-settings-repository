@@ -6,11 +6,12 @@
   <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="myValues">
       <value>
-        <list size="4">
+        <list size="5">
           <item index="0" class="java.lang.String" itemvalue="slot" />
           <item index="1" class="java.lang.String" itemvalue="padding" />
           <item index="2" class="java.lang.String" itemvalue="v-text" />
           <item index="3" class="java.lang.String" itemvalue=":class" />
+          <item index="4" class="java.lang.String" itemvalue="v-show" />
         </list>
       </value>
     </option>
@@ -19,7 +20,7 @@
   <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="myValues">
       <value>
-        <list size="29">
+        <list size="30">
           <item index="0" class="java.lang.String" itemvalue="nobr" />
           <item index="1" class="java.lang.String" itemvalue="noembed" />
           <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -49,6 +50,7 @@
           <item index="26" class="java.lang.String" itemvalue="hidden" />
           <item index="27" class="java.lang.String" itemvalue="i-switch" />
           <item index="28" class="java.lang.String" itemvalue="tooltip" />
+          <item index="29" class="java.lang.String" itemvalue="tag" />
         </list>
       </value>
     </option>

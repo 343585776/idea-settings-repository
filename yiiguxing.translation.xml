@@ -1,6 +1,8 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="notify" />
+      <item value="通知" />
       <item value="开票" />
       <item value="ticket" />
       <item value="票据" />
@@ -49,8 +51,6 @@
       <item value="首发部位" />
       <item value="首发" />
       <item value="已动手术" />
-      <item value="手术" />
-      <item value="被遗传" />
     </histories>
   </component>
 </application>
