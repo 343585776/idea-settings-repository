@@ -1,6 +1,13 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="提交" />
+      <item value="验证成功" />
+      <item value="待支付" />
+      <item value="验证" />
+      <item value="组装" />
+      <item value="金额" />
+      <item value="发起" />
       <item value="运行日志" />
       <item value="请求无效，请确认请求参数正确。" />
       <item value="resolved" />
@@ -44,13 +51,6 @@
       <item value="已经动手术" />
       <item value="已手术" />
       <item value="结婚" />
-      <item value="已结婚" />
-      <item value="遗传" />
-      <item value="抑制物" />
-      <item value="浓度" />
-      <item value="学历" />
-      <item value="体重" />
-      <item value="身高" />
     </histories>
   </component>
 </application>
