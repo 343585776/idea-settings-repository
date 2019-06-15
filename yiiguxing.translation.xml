@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="ticket" />
       <item value="票据" />
       <item value="提交" />
       <item value="验证成功" />
@@ -50,7 +51,6 @@
       <item value="手术" />
       <item value="被遗传" />
       <item value="已经动手术" />
-      <item value="已手术" />
     </histories>
   </component>
 </application>
