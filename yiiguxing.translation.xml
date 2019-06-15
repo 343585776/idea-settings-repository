@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="运行日志" />
       <item value="请求无效，请确认请求参数正确。" />
       <item value="resolved" />
       <item value="策略匹配" />
@@ -50,7 +51,6 @@
       <item value="学历" />
       <item value="体重" />
       <item value="身高" />
-      <item value="手术病史" />
     </histories>
   </component>
 </application>
