@@ -1,6 +1,12 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="Authentication" />
+      <item value="登录" />
+      <item value="signlog" />
+      <item value="sign log" />
+      <item value="sign" />
+      <item value="日志" />
       <item value="日期" />
       <item value="性能" />
       <item value="审核" />
@@ -45,12 +51,6 @@
       <item value="出血" />
       <item value="重点" />
       <item value="重点关注" />
-      <item value="治疗方案" />
-      <item value="伴随疾病" />
-      <item value="确诊时间" />
-      <item value="传染病" />
-      <item value="发生过部位" />
-      <item value="关节畸形" />
     </histories>
   </component>
 </application>
