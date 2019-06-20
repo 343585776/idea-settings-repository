@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="性能" />
       <item value="审核" />
       <item value="notify" />
       <item value="通知" />
@@ -50,7 +51,6 @@
       <item value="发生过部位" />
       <item value="关节畸形" />
       <item value="首发部位" />
-      <item value="首发" />
     </histories>
   </component>
 </application>
