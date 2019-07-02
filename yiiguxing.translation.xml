@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="启动入口" />
       <item value="generate Increment Account Merchant No" />
       <item value="delegate" />
       <item value="decorators" />
@@ -50,7 +51,6 @@
       <item value="执行" />
       <item value="Scheduler" />
       <item value="封装参数" />
-      <item value="必填参数验证" />
     </histories>
   </component>
 </application>
