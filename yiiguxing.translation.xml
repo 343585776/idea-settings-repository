@@ -1,6 +1,8 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="创建人" />
+      <item value="courier" />
       <item value="profiles" />
       <item value="profile" />
       <item value="启动入口" />
@@ -49,8 +51,6 @@
       <item value="emp" />
       <item value="人员" />
       <item value="部门" />
-      <item value="execute" />
-      <item value="执行" />
     </histories>
   </component>
 </application>
