@@ -1,6 +1,9 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="迁移" />
+      <item value="省行" />
+      <item value="Refactor" />
       <item value="物流" />
       <item value="物流商家" />
       <item value="清空历史" />
@@ -48,9 +51,6 @@
       <item value="增量数据" />
       <item value="增量" />
       <item value="员工" />
-      <item value="employer" />
-      <item value="employ" />
-      <item value="employs" />
     </histories>
   </component>
 </application>
