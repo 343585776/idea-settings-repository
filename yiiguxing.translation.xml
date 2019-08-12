@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="external" />
       <item value="固定电话" />
       <item value="对接" />
       <item value="obtain" />
@@ -50,11 +51,10 @@
       <item value="请求无效，请确认请求参数正确。" />
       <item value="resolved" />
       <item value="策略匹配" />
-      <item value="现有" />
     </histories>
     <option name="languageScores">
       <map>
-        <entry key="CHINESE" value="1" />
+        <entry key="CHINESE" value="2" />
         <entry key="ENGLISH" value="2" />
       </map>
     </option>
