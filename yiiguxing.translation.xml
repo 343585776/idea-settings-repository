@@ -1,6 +1,7 @@
 <application>
   <component name="AppStorage">
     <histories>
+      <item value="obtain" />
       <item value="获取" />
       <item value="参数组装" />
       <item value="suppress" />
@@ -50,10 +51,10 @@
       <item value="现有" />
       <item value="终端" />
       <item value="店主" />
-      <item value="店员" />
     </histories>
     <option name="languageScores">
       <map>
+        <entry key="CHINESE" value="1" />
         <entry key="ENGLISH" value="1" />
       </map>
     </option>
