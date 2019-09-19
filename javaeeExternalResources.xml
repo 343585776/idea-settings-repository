@@ -1,7 +1,0 @@
-<application>
-  <component name="ExternalResourceManagerImpl">
-    <ignored-resource url="http://ehcache.org/ehcache.xsd" />
-    <ignored-resource url="http://www.pollix.at/thymeleaf/shiro" />
-    <ignored-resource url="http://www.thymeleaf.org" />
-  </component>
-</application>
