@@ -6,6 +6,10 @@
           <option name="url" value="http://gitee.com" />
           <option name="userName" value="343585776@qq.com" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://git.oschina.net" />
+          <option name="userName" value="343585776@qq.com" />
+        </UrlAndUserName>
       </list>
     </option>
   </component>
