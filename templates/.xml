@@ -1,0 +1,8 @@
+<templateSet group="自定义">
+  <template name="zs" value="================================$VAR$================================" description="分割显示用注释" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_COMMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
