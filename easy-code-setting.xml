@@ -41,16 +41,43 @@
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="define" />
-                    <option name="value" value="##（Velocity宏定义）&#10;&#10;##定义设置表名后缀的宏定义，调用方式：#setTableSuffix(&quot;Test&quot;)&#10;#macro(setTableSuffix $suffix)&#10;    #set($tableName = $!tool.append($tableInfo.name, $suffix))&#10;#end&#10;&#10;##定义设置包名后缀的宏定义，调用方式：#setPackageSuffix(&quot;Test&quot;)&#10;#macro(setPackageSuffix $suffix)&#10;#if($suffix!=&quot;&quot;)package #end#if($tableInfo.savePackageName!=&quot;&quot;)$!{tableInfo.savePackageName}.#{end}$!suffix;&#10;#end&#10;&#10;##定义直接保存路径与文件名简化的宏定义，调用方式：#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;#macro(save $path $fileName)&#10;    $!callback.setSavePath($tool.append($tableInfo.savePath, $path))&#10;    $!callback.setFileName($tool.append($tableInfo.name, $fileName))&#10;#end&#10;&#10;##定义表注释的宏定义，调用方式：#tableComment(&quot;注释信息&quot;)&#10;#macro(tableComment $desc)&#10;/**&#10; * $!{tableInfo.comment}($!{tableInfo.name})$desc&#10; *&#10; * @author $!author&#10; * @since $!time.currTime()&#10; */&#10;#end&#10;&#10;##定义GET，SET方法的宏定义，调用方式：#getSetMethod($column)&#10;#macro(getSetMethod $column)&#10;&#10;    public $!{tool.getClsNameByFullName($column.type)} get$!{tool.firstUpperCase($column.name)}() {&#10;        return $!{column.name};&#10;    }&#10;&#10;    public void set$!{tool.firstUpperCase($column.name)}($!{tool.getClsNameByFullName($column.type)} $!{column.name}) {&#10;        this.$!{column.name} = $!{column.name};&#10;    }&#10;#end" />
+                    <option name="value" value="##（Velocity宏定义）&#10;&#10;##定义设置表名后缀的宏定义，调用方式：#setTableSuffix(&quot;Test&quot;)&#10;#macro(setTableSuffix $suffix)&#10;    #set($tableName = $!tool.append($tableInfo.name, $suffix))&#10;#end&#10;&#10;##定义设置包名后缀的宏定义，调用方式：#setPackageSuffix(&quot;Test&quot;)&#10;#macro(setPackageSuffix $suffix)&#10;#if($suffix!=&quot;&quot;)package #end#if($tableInfo.savePackageName!=&quot;&quot;)$!{tableInfo.savePackageName}.#{end}$!suffix;&#10;#end&#10;&#10;##定义直接保存路径与文件名简化的宏定义，调用方式：#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;#macro(save $path $fileName)&#10;    $!callback.setSavePath($tool.append($tableInfo.savePath, $path))&#10;    $!callback.setFileName($tool.append($tableInfo.name, $fileName))&#10;#end&#10;&#10;##定义表注释的宏定义，调用方式：#tableComment(&quot;注释信息&quot;)&#10;#macro(tableComment $desc)&#10;/**&#10; * $!{tableInfo.comment}($!{tableInfo.name})$desc&#10; *&#10; * @author $!author&#10; * created on $!time.currTime()&#10; */&#10;#end&#10;&#10;##定义GET，SET方法的宏定义，调用方式：#getSetMethod($column)&#10;#macro(getSetMethod $column)&#10;&#10;    public $!{tool.getClsNameByFullName($column.type)} get$!{tool.firstUpperCase($column.name)}() {&#10;        return $!{column.name};&#10;    }&#10;&#10;    public void set$!{tool.firstUpperCase($column.name)}($!{tool.getClsNameByFullName($column.type)} $!{column.name}) {&#10;        this.$!{column.name} = $!{column.name};&#10;    }&#10;#end" />
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="autoImport" />
                     <option name="value" value="##自动导入包（仅导入实体属性需要的包，通常用于实体类）&#10;#foreach($import in $importList)&#10;import $!import;&#10;#end" />
                   </GlobalConfig>
+                  <GlobalConfig>
+                    <option name="name" value="removeTablePrefix" />
+                    <option name="value" value="##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end" />
+                  </GlobalConfig>
                 </list>
               </option>
               <option name="name" value="Default" />
             </GlobalConfigGroup>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="templateGroupMap">
+      <map>
+        <entry key="Default">
+          <value>
+            <TemplateGroup>
+              <option name="elementList">
+                <list>
+                  <Template>
+                    <option name="code" value="//调试表原始对象&#10;$!tool.debug($tableInfo.obj)&#10;&#10;//调试列原始对象&#10;$!tool.debug($tableInfo.fullColumn.get(0).obj)&#10;&#10;//调试列原始列类型&#10;$!tool.debug($tableInfo.fullColumn.get(0).obj.dataType)&#10;&#10;//获取原始列类型中的字段&#10;sqlType = $!tool.getField($tableInfo.fullColumn.get(0).obj.dataType, &quot;typeName&quot;)&#10;&#10;//执行原始列类型中的方法&#10;sqlTypeLen = $!tableInfo.fullColumn.get(0).obj.dataType.getLength()&#10;" />
+                    <option name="name" value="debug.json" />
+                  </Template>
+                  <Template>
+                    <option name="code" value="##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##引入宏定义&#10;$!define&#10;&#10;##定义类名&#10;#set($tableName = $tool.append($tableInfo.name, &quot;ParamsDTO&quot;))&#10;&#10;##设置回调&#10;$!callback.setFileName($tool.append($tableName, &quot;.java&quot;))&#10;$!callback.setSavePath($tool.append($tableInfo.savePath, &quot;/dto&quot;))&#10;&#10;##使用宏定义设置包后缀&#10;#setPackageSuffix(&quot;dto&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;import lombok.Data;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;ParamsDTO&quot;)&#10;@Data&#10;public class $!{tableInfo.name}ParamsDTO {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(!$column.ext.paramsDisable)&#10;        #if(${column.comment})/**&#10;     * ${column.comment}&#10;     */#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;&#10;  #end&#10;#end&#10;&#10;}" />
+                    <option name="name" value="ParamsDTO" />
+                  </Template>
+                </list>
+              </option>
+              <option name="name" value="Default" />
+            </TemplateGroup>
           </value>
         </entry>
       </map>
