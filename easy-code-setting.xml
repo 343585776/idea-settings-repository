@@ -1,0 +1,130 @@
+<application>
+  <component name="EasyCodeSetting">
+    <option name="author" value="sdevil507" />
+    <option name="columnConfigGroupMap">
+      <map>
+        <entry key="Default">
+          <value>
+            <ColumnConfigGroup>
+              <option name="elementList">
+                <list>
+                  <ColumnConfig>
+                    <option name="title" value="paramsFieldEnable" />
+                    <option name="type" value="BOOLEAN" />
+                  </ColumnConfig>
+                  <ColumnConfig>
+                    <option name="title" value="searchFieldEnable" />
+                    <option name="type" value="BOOLEAN" />
+                  </ColumnConfig>
+                  <ColumnConfig>
+                    <option name="title" value="resultFieldEnable" />
+                    <option name="type" value="BOOLEAN" />
+                  </ColumnConfig>
+                </list>
+              </option>
+              <option name="name" value="Default" />
+            </ColumnConfigGroup>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="globalConfigGroupMap">
+      <map>
+        <entry key="Default">
+          <value>
+            <GlobalConfigGroup>
+              <option name="elementList">
+                <list>
+                  <GlobalConfig>
+                    <option name="name" value="init" />
+                    <option name="value" value="##初始化区域&#10;&#10;##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end&#10;&#10;&#10;&#10;##实现动态排除列&#10;#set($temp = $tool.newHashSet(&quot;testCreateTime&quot;, &quot;otherColumn&quot;))&#10;#foreach($item in $temp)&#10;    #set($newList = $tool.newArrayList())&#10;    #foreach($column in $tableInfo.fullColumn)&#10;        #if($column.name!=$item)&#10;            ##带有反回值的方法调用时使用$tool.call来消除返回值&#10;            $tool.call($newList.add($column))&#10;        #end&#10;    #end&#10;    ##重新保存&#10;    $tableInfo.setFullColumn($newList)&#10;#end&#10;&#10;##对importList进行篡改&#10;#set($temp = $tool.newHashSet())&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(!$column.type.startsWith(&quot;java.lang.&quot;))&#10;        ##带有反回值的方法调用时使用$tool.call来消除返回值&#10;        $tool.call($temp.add($column.type))&#10;    #end&#10;#end&#10;##覆盖&#10;#set($importList = $temp)" />
+                  </GlobalConfig>
+                  <GlobalConfig>
+                    <option name="name" value="define" />
+                    <option name="value" value="##（Velocity宏定义）&#10;&#10;##定义设置表名后缀的宏定义，调用方式：#setTableSuffix(&quot;Test&quot;)&#10;#macro(setTableSuffix $suffix)&#10;    #set($tableName = $!tool.append($tableInfo.name, $suffix))&#10;#end&#10;&#10;##定义设置包名后缀的宏定义，调用方式：#setPackageSuffix(&quot;Test&quot;)&#10;#macro(setPackageSuffix $suffix)&#10;#if($suffix!=&quot;&quot;)package #end#if($tableInfo.savePackageName!=&quot;&quot;)$!{tableInfo.savePackageName}.#{end}$!suffix;&#10;#end&#10;&#10;##定义直接保存路径与文件名简化的宏定义，调用方式：#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;#macro(save $path $fileName)&#10;    $!callback.setSavePath($tool.append($tableInfo.savePath, $path))&#10;    $!callback.setFileName($tool.append($tableInfo.name, $fileName))&#10;#end&#10;&#10;##定义表注释的宏定义，调用方式：#tableComment(&quot;注释信息&quot;)&#10;#macro(tableComment $desc)&#10;/**&#10; * $!{tableInfo.comment}($!{tableInfo.name})$desc&#10; *&#10; * @author $!author&#10; * @since $!time.currTime()&#10; */&#10;#end&#10;&#10;##定义GET，SET方法的宏定义，调用方式：#getSetMethod($column)&#10;#macro(getSetMethod $column)&#10;&#10;    public $!{tool.getClsNameByFullName($column.type)} get$!{tool.firstUpperCase($column.name)}() {&#10;        return $!{column.name};&#10;    }&#10;&#10;    public void set$!{tool.firstUpperCase($column.name)}($!{tool.getClsNameByFullName($column.type)} $!{column.name}) {&#10;        this.$!{column.name} = $!{column.name};&#10;    }&#10;#end" />
+                  </GlobalConfig>
+                  <GlobalConfig>
+                    <option name="name" value="autoImport" />
+                    <option name="value" value="##自动导入包（仅导入实体属性需要的包，通常用于实体类）&#10;#foreach($import in $importList)&#10;import $!import;&#10;#end" />
+                  </GlobalConfig>
+                </list>
+              </option>
+              <option name="name" value="Default" />
+            </GlobalConfigGroup>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="typeMapperGroupMap">
+      <map>
+        <entry key="Default">
+          <value>
+            <TypeMapperGroup>
+              <option name="elementList">
+                <list>
+                  <TypeMapper>
+                    <option name="columnType" value="varchar(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="char(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="text" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="decimal(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Double" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="decimal(\(\d+,\d+\))?" />
+                    <option name="javaType" value="java.lang.Double" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="integer" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int4" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int8" />
+                    <option name="javaType" value="java.lang.Long" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="bigint(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Long" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="datetime" />
+                    <option name="javaType" value="java.util.Date" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="timestamp" />
+                    <option name="javaType" value="java.util.Date" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="boolean" />
+                    <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="bit(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                </list>
+              </option>
+              <option name="name" value="Default" />
+            </TypeMapperGroup>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>
