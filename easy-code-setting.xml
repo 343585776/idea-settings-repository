@@ -150,7 +150,7 @@
                     <option name="javaType" value="java.lang.Boolean" />
                   </TypeMapper>
                   <TypeMapper>
-                    <option name="columnType" value="bit(\(\d\))?" />
+                    <option name="columnType" value="bit(\(\d+\))?" />
                     <option name="javaType" value="java.lang.Boolean" />
                   </TypeMapper>
                   <TypeMapper>
@@ -162,7 +162,7 @@
                     <option name="javaType" value="java.lang.Object" />
                   </TypeMapper>
                   <TypeMapper>
-                    <option name="columnType" value="number(1)" />
+                    <option name="columnType" value="number(\(1\))?" />
                     <option name="javaType" value="java.lang.Object" />
                   </TypeMapper>
                 </list>
