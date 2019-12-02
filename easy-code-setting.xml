@@ -49,7 +49,7 @@
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="removeTablePrefix" />
-                    <option name="value" value="##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end&#10;&#10;##去掉表的api_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;api_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(4)))&#10;#end" />
+                    <option name="value" value="##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end&#10;&#10;##去掉表的api_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;api_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(4)))&#10;#end&#10;&#10;##去掉表的f_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;f_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end" />
                   </GlobalConfig>
                 </list>
               </option>
@@ -152,6 +152,10 @@
                   <TypeMapper>
                     <option name="columnType" value="bit(\(\d+\))?" />
                     <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="datetime(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Object" />
                   </TypeMapper>
                 </list>
               </option>
