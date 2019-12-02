@@ -49,7 +49,7 @@
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="autoImport" />
-                    <option name="value" value="##自动导入包（仅导入实体属性需要的包，通常用于实体类）&#10;#foreach($import in $importList)&#10;import $!import;&#10;#end" />
+                    <option name="value" value="##自动导入包（仅导入实体属性需要的包，通常用于实体类）&#10;#foreach($import in $importList)&#10;#if(!$import.equals(&quot;byte&quot;))&#10;import $!import;&#10;#end&#10;#end" />
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="removeTablePrefix" />
@@ -183,7 +183,7 @@
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="longtext(\(\d+\))?" />
-                    <option name="javaType" value="java.lang.Object" />
+                    <option name="javaType" value="java.lang.String" />
                   </TypeMapper>
                 </list>
               </option>
