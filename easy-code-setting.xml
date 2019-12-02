@@ -185,6 +185,10 @@
                     <option name="columnType" value="longtext(\(\d+\))?" />
                     <option name="javaType" value="java.lang.String" />
                   </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="clob" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
                 </list>
               </option>
               <option name="name" value="Default" />
