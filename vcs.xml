@@ -14,6 +14,10 @@
           <option name="url" value="https://app.js.abchina.com/jiangsu/testentrance/git/abc/js-market.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://app.js.abchina.com" />
+          <option name="userName" value="gujianfeng" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Java/new" />
