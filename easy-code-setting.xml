@@ -53,7 +53,7 @@
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="removeTablePrefix" />
-                    <option name="value" value="##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end&#10;&#10;##去掉表的api_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;api_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(4)))&#10;#end&#10;&#10;##去掉表的f_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;F_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end" />
+                    <option name="value" value="##去掉表的t_前缀&#10;#if($tableInfo.obj.name.startsWith(&quot;t_&quot;))&#10;    $!tableInfo.setName($tool.getClassName($tableInfo.obj.name.substring(2)))&#10;#end" />
                   </GlobalConfig>
                 </list>
               </option>
@@ -75,7 +75,7 @@
                     <option name="name" value="ParamsDTO" />
                   </Template>
                   <Template>
-                    <option name="code" value="##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##引入宏定义&#10;$!define&#10;&#10;##定义类名&#10;#set($tableName = $tool.append($tableInfo.name, &quot;PO&quot;))&#10;&#10;##设置回调&#10;$!callback.setFileName($tool.append($tableName, &quot;.java&quot;))&#10;$!callback.setSavePath($tool.append($tableInfo.savePath, &quot;/po&quot;))&#10;&#10;##使用宏定义设置包后缀&#10;#setPackageSuffix(&quot;po&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;import lombok.*;&#10;&#10;import javax.persistence.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;PO&quot;)&#10;@Entity&#10;@Table(name = &quot;$!tableInfo.obj.name&quot;)&#10;@Data&#10;public class $!{tableInfo.name}PO {&#10;#foreach($column in $tableInfo.fullColumn)&#10;        #if(${column.comment})&#10;    &#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;     &#10;#if($tableInfo.pkColumn.get(0).name.equals($column.name))&#10;    @Id&#10;#end&#10;    @Column&#10;#if($column.ext.LobType)&#10;    @Lob&#10;#end&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;&#10;}" />
+                    <option name="code" value="##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##引入宏定义&#10;$!define&#10;&#10;##定义类名&#10;#set($tableName = $tool.append($tableInfo.name, &quot;PO&quot;))&#10;&#10;##设置回调&#10;$!callback.setFileName($tool.append($tableName, &quot;.java&quot;))&#10;$!callback.setSavePath($tool.append($tableInfo.savePath, &quot;/po&quot;))&#10;&#10;##使用宏定义设置包后缀&#10;#setPackageSuffix(&quot;po&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;import lombok.*;&#10;&#10;import javax.persistence.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;PO&quot;)&#10;@Entity&#10;@Table(name = &quot;$!tableInfo.obj.name&quot;)&#10;@Data&#10;public class $!{tableInfo.name}PO extends BaseJpaSnowflakeIdEntity{&#10;#foreach($column in $tableInfo.fullColumn)&#10;        #if(${column.comment})&#10;    &#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;     &#10;#if($tableInfo.pkColumn.get(0).name.equals($column.name))&#10;    @Id&#10;#end&#10;    @Column&#10;#if($column.ext.LobType)&#10;    @Lob&#10;#end&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;&#10;}" />
                     <option name="name" value="PO" />
                   </Template>
                   <Template>
