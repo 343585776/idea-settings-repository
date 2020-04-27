@@ -31,7 +31,8 @@
       <language id="Up" NEW_FILE="true" ENABLE="false" />
     </languages>
     <userTemplates>
-      <template name="sdevil507">.idea/
+      <template name="sdevil507">.DS_Store
+.idea/
 *.iml
 out
 gen
