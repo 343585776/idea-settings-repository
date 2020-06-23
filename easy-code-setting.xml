@@ -370,7 +370,7 @@
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="bit(\(1\))?" />
-                    <option name="javaType" value="java.lang.Boolean" />
+                    <option name="javaType" value="boolean" />
                   </TypeMapper>
                 </list>
               </option>
