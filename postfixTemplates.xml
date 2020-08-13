@@ -4,7 +4,7 @@
       <conditions>
         <condition id="fqn" fqn="java.lang.String" />
       </conditions>
-      <template name="fakeKey" value="!StringUtils.isEmpty($EXPR$)" toReformat="true" toShortenFQNames="true" />
+      <template name="fakeKey" value="if(!StringUtils.isEmpty($EXPR$)){&#10;        $END$&#10;}" toReformat="true" toShortenFQNames="true" />
     </template>
   </component>
 </application>
