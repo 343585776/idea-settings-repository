@@ -1,0 +1,41 @@
+<application>
+  <component name="AppStorage">
+    <histories>
+      <item value="change" />
+      <item value="/** * Thrown when an authentication attempt has been received for an account that has already been * authenticated (i.e. logged-in), and the system is configured to prevent such concurrent access. * * &lt;p&gt;This is useful when an application must ensure that only one person is logged-in to a single * account at any given time. * * &lt;p&gt;Sometimes account names and passwords are lazily given away * to many people for easy access to a system. Such behavior is undesirable in systems where * users are accountable for their actions, such as in government applications, or when licensing * agreements must be maintained, such as those which only allow 1 user per paid license. * * &lt;p&gt;By disallowing concurrent access, such systems can ensure that each authenticated session * corresponds to one and only one user at any given time. * * @since 0.1 */" />
+      <item value="instance" />
+      <item value="credentials" />
+      <item value="迁移" />
+      <item value="migration" />
+      <item value="过期" />
+      <item value="instant" />
+      <item value="fetch" />
+      <item value="feach" />
+      <item value="featch" />
+      <item value="系统迁移" />
+      <item value="业务" />
+      <item value="第三方" />
+      <item value="handler" />
+      <item value="generater" />
+      <item value="generator" />
+      <item value="生成" />
+      <item value="生成器" />
+      <item value="支撑" />
+      <item value="抱歉，该请求方法不被允许" />
+      <item value="allowed" />
+      <item value="provider" />
+      <item value="facade" />
+      <item value="main" />
+      <item value="适配器" />
+    </histories>
+    <option name="languageScores">
+      <map>
+        <entry key="CHINESE" value="11" />
+        <entry key="ENGLISH" value="12" />
+      </map>
+    </option>
+  </component>
+  <component name="Settings">
+    <option name="ignoreRegExp" value="" />
+  </component>
+</application>

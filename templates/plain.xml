@@ -1,0 +1,30 @@
+<templateSet group="plain">
+  <template name="st" value="String " description="String" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_DECLARATION" value="true" />
+      <option name="GROOVY_EXPRESSION" value="false" />
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="gjf" value="==========================$SELECTION$}==========================" shortcut="NONE" description="分割用注释" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_STATEMENT" value="false" />
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="pst" value="private String " description="private String" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="GROOVY" value="false" />
+      <option name="GROOVY_DECLARATION" value="true" />
+      <option name="GROOVY_EXPRESSION" value="false" />
+      <option name="GROOVY_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
