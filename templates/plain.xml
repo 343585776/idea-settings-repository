@@ -7,12 +7,6 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="gjf" value="==========================$SELECTION$}==========================" shortcut="NONE" description="分割用注释" toReformat="false" toShortenFQNames="false">
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
   <template name="pst" value="private String " description="private String" toReformat="false" toShortenFQNames="false">
     <context>
       <option name="GROOVY_DECLARATION" value="true" />
