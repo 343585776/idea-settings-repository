@@ -1,0 +1,5 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="BetterIntelliJ" shouldLog="false" />
+  </component>
+</application>
