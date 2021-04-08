@@ -62,7 +62,7 @@
     <option name="currColumnConfigGroupName" value="sdevil507" />
     <option name="currGlobalConfigGroupName" value="sdevil507" />
     <option name="currTemplateGroupName" value="sdevil507-mp" />
-    <option name="currTypeMapperGroupName" value="sdevil507" />
+    <option name="currTypeMapperGroupName" value="sdevil507-mp" />
     <option name="globalConfigGroupMap">
       <map>
         <entry key="Default">
@@ -103,7 +103,7 @@
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="define" />
-                    <option name="value" value="##（Velocity宏定义）&#10;&#10;##定义设置表名后缀的宏定义，调用方式：#setTableSuffix(&quot;Test&quot;)&#10;#macro(setTableSuffix $suffix)&#10;    #set($tableName = $!tool.append($tableInfo.name, $suffix))&#10;#end&#10;&#10;##定义设置包名后缀的宏定义，调用方式：#setPackageSuffix(&quot;Test&quot;)&#10;#macro(setPackageSuffix $suffix)&#10;#if($suffix!=&quot;&quot;)package #end#if($tableInfo.savePackageName!=&quot;&quot;)$!{tableInfo.savePackageName}.#{end}$!suffix;&#10;#end&#10;&#10;##定义直接保存路径与文件名简化的宏定义，调用方式：#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;#macro(save $path $fileName)&#10;    $!callback.setSavePath($tool.append($tableInfo.savePath, $path))&#10;    $!callback.setFileName($tool.append($tableInfo.name, $fileName))&#10;#end&#10;&#10;##定义表注释的宏定义，调用方式：#tableComment(&quot;注释信息&quot;)&#10;#macro(tableComment $desc)&#10;/**&#10; * $!{tableInfo.comment}[$!{tableInfo.name}$desc]&#10; *&#10; * @author $!author&#10; * created on $!time.currTime()&#10; */&#10;#end&#10;&#10;##定义GET，SET方法的宏定义，调用方式：#getSetMethod($column)&#10;#macro(getSetMethod $column)&#10;&#10;    public $!{tool.getClsNameByFullName($column.type)} get$!{tool.firstUpperCase($column.name)}() {&#10;        return $!{column.name};&#10;    }&#10;&#10;    public void set$!{tool.firstUpperCase($column.name)}($!{tool.getClsNameByFullName($column.type)} $!{column.name}) {&#10;        this.$!{column.name} = $!{column.name};&#10;    }&#10;#end" />
+                    <option name="value" value="##（Velocity宏定义）&#10;&#10;##定义设置表名后缀的宏定义，调用方式：#setTableSuffix(&quot;Test&quot;)&#10;#macro(setTableSuffix $suffix)&#10;    #set($tableName = $!tool.append($tableInfo.name, $suffix))&#10;#end&#10;&#10;##定义设置包名后缀的宏定义，调用方式：#setPackageSuffix(&quot;Test&quot;)&#10;#macro(setPackageSuffix $suffix)&#10;#if($suffix!=&quot;&quot;)package #end#if($tableInfo.savePackageName!=&quot;&quot;)$!{tableInfo.savePackageName}.#{end}$!suffix;&#10;#end&#10;&#10;##定义直接保存路径与文件名简化的宏定义，调用方式：#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;#macro(save $path $fileName)&#10;    $!callback.setSavePath($tool.append($tableInfo.savePath, $path))&#10;    $!callback.setFileName($tool.append($tableInfo.name, $fileName))&#10;#end&#10;&#10;##定义表注释的宏定义，调用方式：#tableComment(&quot;注释信息&quot;)&#10;#macro(tableComment $desc)&#10;/**&#10; * $!{tableInfo.comment}&#10; *&#10; * @author $!author&#10; * created on $!time.currTime()&#10; */&#10;#end&#10;&#10;##定义GET，SET方法的宏定义，调用方式：#getSetMethod($column)&#10;#macro(getSetMethod $column)&#10;&#10;    public $!{tool.getClsNameByFullName($column.type)} get$!{tool.firstUpperCase($column.name)}() {&#10;        return $!{column.name};&#10;    }&#10;&#10;    public void set$!{tool.firstUpperCase($column.name)}($!{tool.getClsNameByFullName($column.type)} $!{column.name}) {&#10;        this.$!{column.name} = $!{column.name};&#10;    }&#10;#end" />
                   </GlobalConfig>
                   <GlobalConfig>
                     <option name="name" value="autoImport" />
@@ -254,7 +254,7 @@
               <option name="elementList">
                 <list>
                   <Template>
-                    <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/entity&quot;, &quot;.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;entity&quot;)&#10;&#10;##自动导入包（全局变量）&#10;$!autoImport&#10;import com.baomidou.mybatisplus.extension.activerecord.Model;&#10;import java.io.Serializable;&#10;&#10;##表注释（宏定义）&#10;#tableComment(&quot;表实体类&quot;)&#10;@SuppressWarnings(&quot;serial&quot;)&#10;public class $!{tableInfo.name} extends Model&lt;$!{tableInfo.name}&gt; {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(${column.comment})//${column.comment}#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;&#10;#foreach($column in $tableInfo.fullColumn)&#10;#getSetMethod($column)&#10;#end&#10;&#10;#foreach($column in $tableInfo.pkColumn)&#10;    /**&#10;     * 获取主键值&#10;     *&#10;     * @return 主键值&#10;     */&#10;    @Override&#10;    protected Serializable pkVal() {&#10;        return this.$!column.name;&#10;    }&#10;    #break&#10;#end&#10;}" />
+                    <option name="code" value="##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##引入宏定义&#10;$!define&#10;&#10;##定义初始变量&#10;#set($tableName = $tool.append($tableInfo.name, &quot;Controller&quot;))&#10;#set($serviceName=$tool.append($!tool.firstLowerCase($!{tableInfo.name}),'Service'))&#10;#set($mapperName=$tool.append($!tool.firstLowerCase($!{tableInfo.name}),'Mapper'))&#10;##设置回调&#10;$!callback.setFileName($tool.append($tableName, &quot;.java&quot;))&#10;$!callback.setSavePath($tool.append($tableInfo.savePath, &quot;/controller&quot;))&#10;&#10;#if($tableInfo.savePackageName)package $!{tableInfo.savePackageName}.#{end}controller;&#10;&#10;import $!{tableInfo.savePackageName}.po.$!{tableInfo.name}Po;&#10;import $!{tableInfo.savePackageName}.dto.$!{tableInfo.name}ResultDto;&#10;import $!{tableInfo.savePackageName}.dto.$!{tableInfo.name}ParamsDto;&#10;import $!{tableInfo.savePackageName}.mapper.$!{tableInfo.name}Mapper;&#10;import $!{tableInfo.savePackageName}.service.$!{tableInfo.name}Service;&#10;import me.sdevil507.supports.jpa.*;&#10;import me.sdevil507.supports.result.ApiResultDTO;&#10;import me.sdevil507.supports.result.ApiResultGenerator;&#10;import lombok.extern.slf4j.Slf4j;&#10;import org.springframework.beans.factory.annotation.Autowired;&#10;import org.springframework.data.domain.Page;&#10;import org.springframework.stereotype.Controller;&#10;import org.springframework.web.bind.annotation.*;&#10;&#10;import java.util.List;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;Controller&quot;)&#10;@Controller&#10;@RequestMapping(&quot;&quot;)&#10;@Slf4j&#10;public class $!{tableName} {&#10;&#10;    @Autowired&#10;    private $!{tableInfo.name}Service $!{serviceName};&#10;&#10;    @Autowired&#10;    private $!{tableInfo.name}Mapper $!{mapperName};&#10;&#10;    /**&#10;     * 获取全部信息列表&#10;     *&#10;     * @param dto 聚合查询/分页/排序参数&#10;     * @return 信息列表&#10;     */&#10;    @RequestMapping(value = &quot;/readAll&quot;, method = RequestMethod.GET)&#10;    @ResponseBody&#10;    public ApiResultDTO readAll(@RequestBody $!{tableInfo.name}MergeParamsDto dto) {&#10;        List&lt;$!{tableInfo.name}ResultDto&gt; list = $!{mapperName}.pos2dtos($!{serviceName}.readAll(dto.getSearchDto(), dto.getSortParamsDto()));&#10;        return ApiResultGenerator.create(ApiStatusCode.SUCCESS.getCode(), ApiStatusCode.SUCCESS.getDescription(), list);&#10;    }&#10;&#10;    /**&#10;     * 分页获取信息列表&#10;     *&#10;     * @param dto 聚合查询/分页/排序参数&#10;     * @return 分页数据&#10;     */&#10;    @SuppressWarnings(&quot;Convert2Lambda&quot;)&#10;    @RequestMapping(value = &quot;/readAllByPage&quot;, method = RequestMethod.GET)&#10;    @ResponseBody&#10;    public ApiResultDTO readAllByPage(@RequestBody $!{tableInfo.name}MergeParamsDto dto) {&#10;        Page&lt;$!{tableInfo.name}Po&gt; pagePos = $!{serviceName}.readAllByPage(dto.getSearchDto(), dto.getPageParamsDto(), dto.getSortParamsDto());&#10;        PageResultDTO&lt;$!{tableInfo.name}ResultDto&gt; pageResultDto = PageResultGenerator.convert(pagePos, new PageConvertCallBack&lt;$!{tableInfo.name}ResultDto, $!{tableInfo.name}Po&gt;() {&#10;            @Override&#10;            public List&lt;$!{tableInfo.name}ResultDto&gt; exec(List&lt;$!{tableInfo.name}Po&gt; list) {&#10;                return $!{mapperName}.pos2dtos(list);&#10;            }&#10;        });&#10;        return ApiResultGenerator.create(ApiStatusCode.SUCCESS.getCode(), ApiStatusCode.SUCCESS.getDescription(), pageResultDto);&#10;    }&#10;&#10;    /**&#10;     * 创建&#10;     *&#10;     * @param dto 传输类&#10;     * @return 执行反馈&#10;     */&#10;    @RequestMapping(value = &quot;/create&quot;, method = RequestMethod.POST)&#10;    @ResponseBody&#10;    public ApiResultDTO create($!{tableInfo.name}ParamsDto dto) {&#10;        $!{serviceName}.create(dto);&#10;        return ApiResultGenerator.create(ApiStatusCode.SUCCESS.getCode(), ApiStatusCode.SUCCESS.getDescription());&#10;    }&#10;&#10;    /**&#10;     * 更新&#10;     *&#10;     * @param dto 传输类&#10;     * @return 执行反馈&#10;     */&#10;    @RequestMapping(value = &quot;/update&quot;, method = RequestMethod.POST)&#10;    @ResponseBody&#10;    public ApiResultDTO update($!{tableInfo.name}ParamsDto dto) {&#10;        $!{serviceName}.update(dto);&#10;        return ApiResultGenerator.create(ApiStatusCode.SUCCESS.getCode(), ApiStatusCode.SUCCESS.getDescription());&#10;    }&#10;&#10;    /**&#10;     * 删除&#10;     *&#10;     * @param dto 传输类&#10;     * @return 执行反馈&#10;     */&#10;    @RequestMapping(value = &quot;/delete&quot;, method = RequestMethod.POST)&#10;    @ResponseBody&#10;    public ApiResultDTO delete($!{tableInfo.name}ParamsDto dto) {&#10;        $!{serviceName}.delete(dto);&#10;        return ApiResultGenerator.create(ApiStatusCode.SUCCESS.getCode(), ApiStatusCode.SUCCESS.getDescription());&#10;    }&#10;}" />
                     <option name="name" value="entity" />
                   </Template>
                   <Template>
@@ -414,6 +414,77 @@
                 </list>
               </option>
               <option name="name" value="sdevil507" />
+            </TypeMapperGroup>
+          </value>
+        </entry>
+        <entry key="sdevil507-mp">
+          <value>
+            <TypeMapperGroup>
+              <option name="elementList">
+                <list>
+                  <TypeMapper>
+                    <option name="columnType" value="varchar(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="char(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="text" />
+                    <option name="javaType" value="java.lang.String" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="decimal(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Double" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="decimal(\(\d+,\d+\))?" />
+                    <option name="javaType" value="java.lang.Double" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="integer" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int4" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="int8" />
+                    <option name="javaType" value="java.lang.Long" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="bigint(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Long" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="datetime(\(\d+\))?" />
+                    <option name="javaType" value="java.time.LocalDateTime" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="timestamp" />
+                    <option name="javaType" value="java.util.Date" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="boolean" />
+                    <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="bit(\(1\))?" />
+                    <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="tinyint(\(\d+\))?" />
+                    <option name="javaType" value="java.lang.Integer" />
+                  </TypeMapper>
+                </list>
+              </option>
+              <option name="name" value="sdevil507-mp" />
             </TypeMapperGroup>
           </value>
         </entry>
