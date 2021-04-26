@@ -266,6 +266,10 @@
                     <option name="name" value="mapper" />
                   </Template>
                   <Template>
+                    <option name="code" value="##引入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/mapper&quot;, &quot;MapperDecorator.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;mapper&quot;)&#10;&#10;##自动导入包（全局变量）&#10;import org.springframework.beans.factory.annotation.Autowired;&#10;import org.springframework.beans.factory.annotation.Qualifier;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;MapperDecorator&quot;)&#10;public abstract class $!{tableInfo.name}MapperDecorator implements $!{tableInfo.name}Mapper{&#10;&#10;    @Autowired&#10;    @Qualifier(&quot;delegate&quot;)&#10;    private $!{tableInfo.name}Mapper delegate;&#10;&#10;}" />
+                    <option name="name" value="mapperDecorator" />
+                  </Template>
+                  <Template>
                     <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##设置表后缀（宏定义）&#10;#setTableSuffix(&quot;Dao&quot;)&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dao&quot;, &quot;Dao.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;dao&quot;)&#10;&#10;import com.baomidou.mybatisplus.core.mapper.BaseMapper;&#10;import $!{tableInfo.savePackageName}.entity.$!{tableInfo.name}Entity;&#10;import org.apache.ibatis.annotations.Mapper;&#10;&#10;##表注释（宏定义）&#10;#tableComment(&quot;Dao&quot;)&#10;@Mapper&#10;public interface $!{tableName} extends BaseMapper&lt;$!{tableInfo.name}Entity&gt; {&#10;&#10;}" />
                     <option name="name" value="dao" />
                   </Template>
