@@ -36,7 +36,7 @@
               <option name="elementList">
                 <list>
                   <ColumnConfig>
-                    <option name="title" value="SearchDisable" />
+                    <option name="title" value="SearchEnable" />
                     <option name="type" value="BOOLEAN" />
                   </ColumnConfig>
                   <ColumnConfig>
@@ -278,11 +278,15 @@
                     <option name="name" value="serviceImpl" />
                   </Template>
                   <Template>
+                    <option name="code" value="##引入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dto&quot;, &quot;SearchDto.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;dto&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;&#10;import lombok.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;SearchDto&quot;)&#10;@Data&#10;public class $!{tableInfo.name}SearchDto {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if($column.ext.SearchEnable)&#10;        #if(${column.comment})&#10;&#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;&#10;}" />
+                    <option name="name" value="searchDto" />
+                  </Template>
+                  <Template>
                     <option name="code" value="##引入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dto&quot;, &quot;ParamsDto.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;dto&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;&#10;import lombok.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;ParamsDto&quot;)&#10;@Data&#10;public class $!{tableInfo.name}ParamsDto {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(!$column.ext.ParamsDisable)&#10;        #if(${column.comment})&#10;&#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;&#10;}" />
                     <option name="name" value="paramsDto" />
                   </Template>
                   <Template>
-                    <option name="code" value="##引入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dto&quot;, &quot;ResultDto.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;dto&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;&#10;import lombok.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;ResultDto&quot;)&#10;@Data&#10;public class $!{tableInfo.name}ResultDto {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(!$column.ext.resultDisable)&#10;        #if(${column.comment})&#10;&#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;&#10;}" />
+                    <option name="code" value="##引入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dto&quot;, &quot;ResultDto.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;dto&quot;)&#10;&#10;##使用全局变量实现默认包导入&#10;$!autoImport&#10;&#10;import lombok.*;&#10;&#10;##使用宏定义实现类注释信息&#10;#tableComment(&quot;ResultDto&quot;)&#10;@Data&#10;public class $!{tableInfo.name}ResultDto {&#10;#foreach($column in $tableInfo.fullColumn)&#10;    #if(!$column.ext.ResultDisable)&#10;        #if(${column.comment})&#10;&#10;    /**&#10;     * ${column.comment}&#10;     */#end&#10;&#10;    private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;&#10;}" />
                     <option name="name" value="resultDto" />
                   </Template>
                   <Template>
