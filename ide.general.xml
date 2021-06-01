@@ -8,5 +8,7 @@
     <entry key="compiler.automake.postpone.when.idle.less.than" value="1000" />
     <entry key="ide.mac.allowDarkWindowDecorations" value="true" />
     <entry key="debugger.watches.in.variables" value="false" />
+    <entry key="compiler.automake.trigger.delay" value="100" />
+    <entry key="compiler.document.save.trigger.delay" value="100" />
   </component>
 </application>
