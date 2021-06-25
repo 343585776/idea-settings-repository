@@ -3,6 +3,7 @@
     <option name="newTranslationDialogX" value="363" />
     <option name="newTranslationDialogY" value="370" />
     <histories>
+      <item value="Raw use of parameterized class 'R'" />
       <item value="手工" />
       <item value="ifpresent" />
       <item value="present" />
@@ -55,12 +56,12 @@
     </histories>
     <option name="languageScores">
       <map>
-        <entry key="CHINESE" value="99" />
+        <entry key="CHINESE" value="100" />
         <entry key="ENGLISH" value="99" />
       </map>
     </option>
   </component>
   <component name="Cache">
-    <option name="lastTrimTime" value="1622643981233" />
+    <option name="lastTrimTime" value="1624608389807" />
   </component>
 </application>
