@@ -1,10 +1,8 @@
 <application>
   <component name="PostfixTemplates">
-    <template id="sne@userDefined" key=".sne" provider="builtin.java" language-level="1.3" topmost="true">
-      <conditions>
-        <condition id="fqn" fqn="java.lang.String" />
-      </conditions>
-      <template name="fakeKey" value="if (!StringUtils.isEmpty($EXPR$)) {&#10;        $END$&#10;}" toReformat="true" toShortenFQNames="true" />
+    <template id="sne@userDefined" key=".ne" provider="builtin.java" language-level="8" topmost="true">
+      <conditions />
+      <template name="fakeKey" value="if (!ObjectUtils.isEmpty($EXPR$)) {&#10;        $END$&#10;}" toReformat="true" toShortenFQNames="true" />
     </template>
   </component>
 </application>
