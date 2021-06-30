@@ -3,6 +3,18 @@
     <option name="newTranslationDialogX" value="363" />
     <option name="newTranslationDialogY" value="370" />
     <histories>
+      <item value="公司" />
+      <item value="企业" />
+      <item value="firm" />
+      <item value="个体" />
+      <item value="个体户" />
+      <item value="ge" />
+      <item value="enter" />
+      <item value="企业类型" />
+      <item value="abbr" />
+      <item value="简称" />
+      <item value="jian'cheng" />
+      <item value="供应商" />
       <item value="商品" />
       <item value="类别" />
       <item value="cata" />
@@ -41,23 +53,11 @@
       <item value="migration" />
       <item value="过期" />
       <item value="instant" />
-      <item value="fetch" />
-      <item value="feach" />
-      <item value="featch" />
-      <item value="系统迁移" />
-      <item value="业务" />
-      <item value="第三方" />
-      <item value="handler" />
-      <item value="generater" />
-      <item value="generator" />
-      <item value="生成" />
-      <item value="生成器" />
-      <item value="支撑" />
     </histories>
     <option name="languageScores">
       <map>
-        <entry key="CHINESE" value="127" />
-        <entry key="ENGLISH" value="126" />
+        <entry key="CHINESE" value="179" />
+        <entry key="ENGLISH" value="177" />
       </map>
     </option>
   </component>
