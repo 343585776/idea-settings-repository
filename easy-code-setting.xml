@@ -250,7 +250,7 @@
               <option name="elementList">
                 <list>
                   <Template>
-                    <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/entity&quot;, &quot;Entity.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;entity&quot;)&#10;&#10;##自动导入包（全局变量）&#10;$!autoImport&#10;import lombok.*;&#10;import com.baomidou.mybatisplus.annotation.*;&#10;import com.yama.support.mybatis.auditor.entity.AuditedEntity;&#10;&#10;##表注释（宏定义）&#10;#tableComment(&quot;AuditEntity&quot;)&#10;@TableName(value = &quot;$!{tableInfo.obj.name.toUpperCase()}&quot;, autoResultMap = true)&#10;@Data&#10;@EqualsAndHashCode(callSuper = false)&#10;@ToString&#10;public class $!{tableInfo.name}Entity extends AuditedEntity {&#10;#foreach($column in $tableInfo.fullColumn)&#10;#if(!$column.name.equals(&quot;createdBy&quot;)&amp;&amp;!$column.name.equals(&quot;createdTime&quot;)&amp;&amp;!$column.name.equals(&quot;updatedBy&quot;)&amp;&amp;!$column.name.equals(&quot;updatedTime&quot;))&#10;&#10;#if(${column.comment})       /**&#10;        * ${column.comment}&#10;        */#end&#10;        &#10;#if($tableInfo.pkColumn.size()&gt;0&amp;&amp;$tableInfo.pkColumn.get(0).name.equals($column.name))       @TableId&#10;#end&#10;       private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;}" />
+                    <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/entity&quot;, &quot;Entity.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;entity&quot;)&#10;&#10;##自动导入包（全局变量）&#10;$!autoImport&#10;import lombok.*;&#10;import com.baomidou.mybatisplus.annotation.*;&#10;import com.yama.common.support.mybatis.auditor.entity.AuditedEntity;&#10;&#10;##表注释（宏定义）&#10;#tableComment(&quot;AuditEntity&quot;)&#10;@TableName(value = &quot;$!{tableInfo.obj.name.toUpperCase()}&quot;, autoResultMap = true)&#10;@Data&#10;@EqualsAndHashCode(callSuper = false)&#10;@ToString&#10;public class $!{tableInfo.name}Entity extends AuditedEntity {&#10;#foreach($column in $tableInfo.fullColumn)&#10;#if(!$column.name.equals(&quot;createdBy&quot;)&amp;&amp;!$column.name.equals(&quot;createdTime&quot;)&amp;&amp;!$column.name.equals(&quot;updatedBy&quot;)&amp;&amp;!$column.name.equals(&quot;updatedTime&quot;))&#10;&#10;#if(${column.comment})       /**&#10;        * ${column.comment}&#10;        */#end&#10;        &#10;#if($tableInfo.pkColumn.size()&gt;0&amp;&amp;$tableInfo.pkColumn.get(0).name.equals($column.name))       @TableId&#10;#end&#10;       private $!{tool.getClsNameByFullName($column.type)} $!{column.name};&#10;#end&#10;#end&#10;}" />
                     <option name="name" value="entityAudit" />
                   </Template>
                   <Template>
@@ -460,7 +460,7 @@
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="decimal(\(\d+,\d+\))?" />
-                    <option name="javaType" value="java.lang.Double" />
+                    <option name="javaType" value="java.math.BigDecimal" />
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="integer" />
