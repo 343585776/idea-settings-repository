@@ -456,7 +456,7 @@
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="decimal(\(\d+\))?" />
-                    <option name="javaType" value="java.lang.Double" />
+                    <option name="javaType" value="java.math.BigDecimal" />
                   </TypeMapper>
                   <TypeMapper>
                     <option name="columnType" value="decimal(\(\d+,\d+\))?" />
@@ -501,6 +501,10 @@
                   <TypeMapper>
                     <option name="columnType" value="tinyint(\(\d+\))?" />
                     <option name="javaType" value="java.lang.Boolean" />
+                  </TypeMapper>
+                  <TypeMapper>
+                    <option name="columnType" value="date(\(\d+\))?" />
+                    <option name="javaType" value="java.time.LocalDate" />
                   </TypeMapper>
                 </list>
               </option>
