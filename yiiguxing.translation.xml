@@ -3,6 +3,23 @@
     <option name="newTranslationDialogX" value="363" />
     <option name="newTranslationDialogY" value="370" />
     <histories>
+      <item value="审核等待" />
+      <item value="审核拒绝" />
+      <item value="审核决绝" />
+      <item value="拒绝审核" />
+      <item value="jue'jue" />
+      <item value="jue" />
+      <item value="拒绝" />
+      <item value="ju'jue" />
+      <item value="决绝" />
+      <item value="等待审核" />
+      <item value="审核" />
+      <item value="已审核" />
+      <item value="待审核" />
+      <item value="待sh'n" />
+      <item value="dai" />
+      <item value="da" />
+      <item value="已上架" />
       <item value="增值税" />
       <item value="增值税发票" />
       <item value="增值税fa" />
@@ -36,28 +53,11 @@
       <item value="cata" />
       <item value="catag" />
       <item value="catagroy" />
-      <item value="分类" />
-      <item value="Raw use of parameterized class 'R'" />
-      <item value="手工" />
-      <item value="ifpresent" />
-      <item value="present" />
-      <item value="Present" />
-      <item value="拓展" />
-      <item value="t" />
-      <item value="检查卡是否过期" />
-      <item value="检查" />
-      <item value="领取码券" />
-      <item value="领取" />
-      <item value="lin" />
-      <item value="券码领取" />
-      <item value="接口调用" />
-      <item value="预采购" />
-      <item value="yu" />
     </histories>
     <option name="languageScores">
       <map>
-        <entry key="CHINESE" value="214" />
-        <entry key="ENGLISH" value="210" />
+        <entry key="CHINESE" value="296" />
+        <entry key="ENGLISH" value="292" />
       </map>
     </option>
   </component>
