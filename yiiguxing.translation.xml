@@ -3,6 +3,9 @@
     <option name="newTranslationDialogX" value="363" />
     <option name="newTranslationDialogY" value="370" />
     <histories>
+      <item value="evaluation Num" />
+      <item value="评价" />
+      <item value="评论" />
       <item value="销量" />
       <item value="审核通过" />
       <item value="变更" />
@@ -50,18 +53,15 @@
       <item value="个体" />
       <item value="个体户" />
       <item value="ge" />
-      <item value="enter" />
-      <item value="企业类型" />
-      <item value="abbr" />
     </histories>
     <option name="languageScores">
       <map>
-        <entry key="CHINESE" value="340" />
-        <entry key="ENGLISH" value="336" />
+        <entry key="CHINESE" value="354" />
+        <entry key="ENGLISH" value="351" />
       </map>
     </option>
   </component>
   <component name="Cache">
-    <option name="lastTrimTime" value="1625710937346" />
+    <option name="lastTrimTime" value="1626158566242" />
   </component>
 </application>
