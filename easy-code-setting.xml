@@ -266,6 +266,10 @@
                     <option name="name" value="dao" />
                   </Template>
                   <Template>
+                    <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/dao/xml&quot;, &quot;Mapper.xml&quot;)&#10;&#10;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&#10;&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot; &gt;&#10;&lt;mapper namespace=&quot;$!{tableInfo.savePackageName}.dao.GoodsDao&quot;&gt;&#10;    &#10;&lt;/mapper&gt;" />
+                    <option name="name" value="xml" />
+                  </Template>
+                  <Template>
                     <option name="code" value="##导入宏定义&#10;$!define&#10;&#10;##引入去除表前缀&#10;$!removeTablePrefix&#10;&#10;##设置表后缀（宏定义）&#10;#setTableSuffix(&quot;Service&quot;)&#10;&#10;##保存文件（宏定义）&#10;#save(&quot;/service&quot;, &quot;Service.java&quot;)&#10;&#10;##包路径（宏定义）&#10;#setPackageSuffix(&quot;service&quot;)&#10;&#10;##设置表名第一个字母小写开头相关&#10;#set($lowerTableName = $!tool.firstLowerCase($!tableInfo.name))&#10;&#10;import com.baomidou.mybatisplus.extension.service.IService;&#10;import $!{tableInfo.savePackageName}.entity.$!{tableInfo.name}Entity;&#10;import $!{tableInfo.savePackageName}.dto.$!{tableInfo.name}ParamsDto;&#10;&#10;##表注释（宏定义）&#10;#tableComment(&quot;Service&quot;)&#10;public interface $!{tableName} extends IService&lt;$!{tableInfo.name}Entity&gt; {&#10;    &#10;    /**&#10;     * 创建&#10;     * @param $!{lowerTableName}ParamsDto 入参Dto&#10;     */&#10;    void create($!{tableInfo.name}ParamsDto $!{lowerTableName}ParamsDto);&#10;    &#10;    /**&#10;     * 更新&#10;     * @param $!{lowerTableName}ParamsDto 入参Dto&#10;     */&#10;    void update($!{tableInfo.name}ParamsDto $!{lowerTableName}ParamsDto);&#10;    &#10;    /**&#10;     * 删除&#10;     * @param $!{lowerTableName}ParamsDto 入参Dto&#10;     */&#10;    void delete($!{tableInfo.name}ParamsDto $!{lowerTableName}ParamsDto);&#10;}" />
                     <option name="name" value="service" />
                   </Template>
